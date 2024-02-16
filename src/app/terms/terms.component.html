@@ -1,0 +1,14 @@
+<main *ngIf="terms_data">
+
+    <div>
+        <ng-container *ngFor="let terms of terms_data" [ngSwitch]="terms.style">
+            <h1 *ngSwitchCase="'h1'">{{terms.text}}</h1>
+            <h2 *ngSwitchCase="'h2'">{{terms.text}}</h2>
+            <h3 *ngSwitchCase="'h3'">{{terms.text}}</h3>
+            <h4 *ngSwitchCase="'h4'">{{terms.text}}</h4>
+            <h5 *ngSwitchCase="'h5'">{{terms.text}}</h5>
+            <p *ngSwitchDefault="">{{terms.text}}</p>
+        </ng-container>
+    </div>
+
+</main>

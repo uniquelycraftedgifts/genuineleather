@@ -1,0 +1,74 @@
+<div class="product" *ngIf="listingData">
+
+    <div class="product__header flex-row-hcenter-between">
+        <p>{{listingData.product_name}}</p>
+        <div class="flex-row-vcenter">
+            <p><em>product code</em> {{listingData.product_code}}</p>
+            <div class="i-button-and-popup">
+                <i (mouseenter)="Toggle(true)" (mouseleave)="Toggle(false)" class="fa-solid fa-info"></i>
+                <p *ngIf="show" class="i-popup">Use the codes on your Order Form</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="product__main">
+
+        <div class="product__images">
+            <div class="product__large-img">
+                <!-- <div class="large-img" [style.background-image]="makeUrl(listingData.MAIN_IMG)"></div> -->
+                <img class="large-img" [src]="listingData.MAIN_IMG">
+            </div>
+            <div class="product__small-images">
+                <img *ngFor="let image of listingData.IMAGES" class="product__small-image" [src]="image" alt="">
+            </div>
+        </div>
+
+        <div class="product__info">
+
+            <div class="product__details">
+                <div class="product__description">
+                    <p>{{listingData.product_description.description}}</p>
+                    <p *ngIf="listingData.product_description.optional"><strong>Optional: </strong>{{listingData.product_description.optional}}</p>
+                    <p *ngIf="listingData.custom_material"><em>Material can be added in {{listingData.custom_material.customizable_component}} on client request.</em></p>
+                </div>
+                <div class="product__size">
+                    <p>{{listingData.product_size}}</p>
+                </div>
+                <div class="product__price">
+                    <p *ngFor="let price of listingData.PRICES">{{price.price_description}} <strong>R{{price.price_amount}}.00</strong></p>
+                </div>
+                <button (click)="ToggleVideo()" class="button-border product-video-btn">Demonstration Video <i class="fa-solid fa-play"></i></button>
+            </div>
+
+            <div class="product__materials">
+                <div class="product__colors">
+                    <div *ngFor="let colour of listingData.COLOURS" class="color-pattern-group">
+                        <i [style.background-color]="colour.colour_hex" [style.color]="colour.colour_hex" class="product__color fa-solid fa-circle-half-stroke"></i>
+                        <p class="color-pattern-code"><em>Code: {{colour.colour_code}}</em></p>
+                    </div>
+                    <div *ngFor="let two_tone of listingData.TWO_TONE" class="color-pattern-group">
+                        <i [style.background-color]="two_tone.TWO.colour_hex" [style.color]="two_tone.ONE.colour_hex" class="product__color fa-solid fa-circle-half-stroke"></i>
+                        <p class="color-pattern-code"><em>Code: {{two_tone.two_tone_code}}</em></p>
+                    </div>
+                </div>
+                <div class="product__patterns">
+                    <div *ngFor="let pattern of listingData.PATTERNS" class="color-pattern-group">
+                        <div [style.background-image]="makeUrl(pattern.IMG)" class="product__patterns-img"></div>
+                        <p class="color-pattern-code"><em>Code: {{pattern.pattern_code}}</em></p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <div *ngIf="show_video" class="video-box flex-col-hcenter">
+        <div class="flex-row-vcenter-between">
+            <p>Demonstration Video</p>
+            <button (click)="CloseVideo()" class="button-border close-video-btn">Close <i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <iframe class="video-box__video" [src]="sanitize(listingData.product_video)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+</div>

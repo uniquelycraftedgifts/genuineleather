@@ -1,0 +1,33 @@
+<app-hero></app-hero>
+
+
+<main *ngIf="home_data">
+
+    <section id="features" class="features">
+      <div class="two-col-grid">
+          <div *ngFor="let feature of home_data.FEATURES" class="feature flex-col">
+              <h3>{{feature.title}}</h3>
+              <p>{{feature.description}}</p>
+          </div>
+      </div>
+    </section>
+  
+    
+    <section *ngIf="story_img" id="story" class="story" [style.background-image]="makeUrl(story_img)">
+        <div class="transparent-rounded-div">
+            <h2>{{home_data.story.title}}</h2>
+            <p *ngFor="let par of home_data.story.STORY">{{par}}</p>
+        </div>
+    </section>
+    
+  
+    <section *ngIf="category_data" id="product-categories" class="product-categories three-col-grid">
+      <div *ngFor="let cat of category_data" class="category">
+          <div class="category__img">
+              <img [src]="cat.category_image" alt="">
+          </div>
+          <p>{{cat.category_name}}</p>
+      </div>
+    </section>
+  
+  </main>

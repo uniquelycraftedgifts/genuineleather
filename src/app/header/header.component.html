@@ -1,0 +1,19 @@
+<header>
+
+    <nav>
+      <div class="nav-aside">
+        <img class="logo-m" [src]="logo" alt="">
+        <i (click)="ToggleNav()" class="nav-button fa-solid fa-bars"></i>
+      </div>
+      
+      <ul class="nav-links" [ngClass]="{ 'display-nav' : toggle }">
+        <li> <a class="nav-link" routerLink="/home">HOME</a> </li>
+        <li> <a class="nav-link" routerLink="/home" fragment="story">ABOUT</a> </li>
+        <li> <a class="nav-link" routerLink="/products">PRODUCTS</a> </li>
+        <li> <a class="nav-link" routerLink="/order">ORDER</a> </li>
+        <li> <a class="nav-link" routerLink="/home" fragment="contact">CONTACT</a> </li>
+      </ul>
+
+    </nav>
+
+</header>

@@ -1,0 +1,41 @@
+section {
+    padding-top: 0;
+    padding-bottom: 2em;
+}
+
+
+h2 {
+    color: var(--color-900);
+    font-size: var(--fs-800);
+}
+
+
+
+
+/* PRODUCTS CATEGORY */
+
+.products__category {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.category-header {
+    margin-top: 8em;
+    padding: 1em 2em;
+    text-align: center;
+    border-top: solid 2px var(--color-900);
+    border-bottom: solid 2px var(--color-900);
+}
+
+.category-header__nav-list {
+    gap: 1em;
+}
+
+.category-header__nav-link {
+    color: var(--color-900);
+    border-bottom: solid 1px transparent;
+    transition: border-bottom var(--transition-time);
+}
+    .category-header__nav-link:hover {
+        border-bottom: solid 1px var(--color-900);
+    }

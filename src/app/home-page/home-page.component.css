@@ -1,0 +1,192 @@
+/* FEATURES */
+
+.features {
+    background-image: linear-gradient(var(--color-100), var(--color-200));
+}
+
+.features .two-col-grid {
+    gap: 6em;
+    justify-content: space-around;
+}
+
+.feature {
+    max-width: 400px;
+    gap: 2em;
+    align-items: center;
+}
+
+.feature p {
+    width: 90%;
+    font-family: var(--ff-display-sans);
+}
+
+
+
+
+/* STORY */
+
+.story {
+    margin: 8em 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.story .transparent-rounded-div {
+    width: 50%;
+    padding: 4em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+    position: relative;
+}
+
+.story h2 {
+    margin-bottom: 0.5em;
+    color: var(--color-100);
+    font-size: var(--fs-800);
+}
+
+.story p {
+    color: var(--color-100);
+    font-size: var(--fs-400);
+    font-family: var(--ff-display-sans);
+}
+
+
+
+
+/* PRODUCT CATEGORIES */
+
+.product-categories {
+    margin: 8em 0;
+    gap: 4em;
+    background-image: linear-gradient(var(--color-100), var(--color-200));
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.category__img {
+    width: 20rem;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.category p {
+    font-size: var(--fs-600);
+}
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+
+/* 1200 PX */
+
+@media (max-width: 1200px) {
+
+    .category__img {
+        width: 15rem;
+        height: 15rem;
+    }
+
+}
+
+
+
+
+/* 900 PX */
+
+@media (max-width: 900px) {
+
+    .story .transparent-rounded-div {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+
+
+
+/* 600 PX */
+
+@media (max-width: 600px) {
+
+    .features .two-col-grid {
+        gap: 3em;
+    }
+    
+    .feature {
+        gap: 1em;
+    }
+
+    .feature p {
+        text-align: center;
+    }
+
+
+    .story {
+        margin: 4em 0;
+        padding: 2em;
+    }
+
+
+    .product-categories {
+        margin: 4em 0;
+        padding: 2em;
+    }
+
+}
+
+
+
+
+/* 500 PX */
+
+@media (max-width: 500px) {
+
+    .features {
+        padding: 3em 0;
+    }
+    
+    .story .transparent-rounded-div {
+        padding: 3em;
+    }
+
+    
+    .category__img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+}
+
+
+
+
+/* 400 PX */
+
+@media (max-width: 400px) {
+
+    .story {
+        padding: 2em;
+    }
+
+    .story .transparent-rounded-div {
+        padding: 2em;
+    }
+}

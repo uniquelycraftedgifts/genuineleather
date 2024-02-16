@@ -1,0 +1,15 @@
+button {
+    padding: 1em 2em;
+    font-size: var(--fs-500);
+}
+
+div {
+    padding: 2em;
+    border: solid 2px black;
+}
+
+video {
+    width: 320px;
+    height: 240px;
+    border: solid 5px yellow;
+}

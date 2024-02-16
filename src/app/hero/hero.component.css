@@ -1,0 +1,101 @@
+/* HERO */
+
+.hero {
+    padding: 8em 10em;
+    margin-bottom: 8em;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.hero__blurb {
+    width: 30%;
+    padding: 4em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.hero__blurb p {
+    color: var(--color-100);
+    font-size: var(--fs-800);
+}
+
+.hero__blurb a {
+    margin-top: 2em;
+    color: var(--color-100);
+    font-size: var(--fs-600);
+    background-color: var(--color-900-t);
+}
+
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+
+/* 1200 PX */
+
+@media (max-width: 1200px) {
+    
+    .hero {
+        padding: 4em 5em;
+    }
+
+}
+
+
+
+
+/* 600 PX */
+
+@media (max-width: 600px) {
+
+    .hero {
+        margin-bottom: 4em;
+        padding: 3em;
+    }
+    
+    .hero__blurb {
+        width: 80%;
+        margin: 0 auto;
+        gap: 1em;
+    }
+
+}
+
+
+
+
+/* 500 PX */
+
+@media (max-width: 500px) {
+
+    .hero__blurb {
+        padding: 3em;
+    }
+}
+
+
+
+
+/* 400 PX */
+
+@media (max-width: 400px) {
+
+    .hero {
+        padding: 2em;
+    }
+
+    .hero__blurb {
+        padding: 2em;
+    }
+    
+}
