@@ -1,4 +1,4 @@
-<div *ngIf="hero_img" class="hero" [style.background-image]="makeUrl(hero_img)">
+<div class="hero" [ngStyle]="{ 'background-image': hero_img ? makeUrl(hero_img) : 'none' }">
   <div class="hero__blurb transparent-rounded-div">
     <p>Hand Crafted</p>
     <p>Genuine Leather</p>

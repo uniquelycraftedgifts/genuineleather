@@ -43,11 +43,21 @@ export default {
                     of: [
                         {
                             type: "block",
-                            styles: []
+                            styles: [],
+                            lists: [],
+                            marks: {
+                                decorators: [],
+                                annotations: []
+                            }
                         }
                     ]
                 }
             ]
+        },
+        {
+            title: "Order Form PDF",
+            name: "order_pdf",
+            type: "file",
         },
         {
             title: "Terms and Conditions",
@@ -57,6 +67,11 @@ export default {
             of: [
                 {
                     type: "block",
+                    lists: [],
+                    marks: {
+                        decorators: [],
+                        annotations: []
+                    }
                 }
             ]
         },
@@ -68,6 +83,11 @@ export default {
             of: [
                 {
                     type: "block",
+                    lists: [],
+                    marks: {
+                        decorators: [],
+                        annotations: []
+                    }
                 }
             ]
         }

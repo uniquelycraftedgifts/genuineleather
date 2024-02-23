@@ -15,7 +15,7 @@ export class HomePageComponent implements OnInit {
   category_data: any;
   story_img: any;
 
-  home_query = '{"HOMEPAGE": *[_type=="home_page"]{story{title,"STORY":content[].children[].text },"FEATURES":features[]{title, description,}} , "CATEGORIES": *[_type=="category"]{category_name, "category_image": category_image.asset->url}, "STORY-IMAGE": *[_type=="site_images"]{"img": story_image.asset->url} }';
+  home_query = '{"HOMEPAGE": *[_type=="home_page"]{story{title,"STORY":content[].children[].text },"FEATURES":features[]{title, description,}} , "CATEGORIES": *[_type=="category"]{category_name, category_slug, "category_image": category_image.asset->url}, "STORY-IMAGE": *[_type=="site_images"]{"img": story_image.asset->url} }';
 
   constructor(private sanityService: SanityService) {}
 

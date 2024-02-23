@@ -59,6 +59,7 @@ export default {
                             title: "Handle/Name",
                             name: "handle",
                             type: "string",
+                            description: "The name people will see on the website following the icon. [Example: Uniquely Crafted]",
                         },
                         {
                             title: "Link",
@@ -68,7 +69,7 @@ export default {
                         {
                             title: "Icon",
                             name: "icon",
-                            description: "Icon as copied from Fontawesome. [Format: <i class='fa-regular fa-copyright'></i>]",
+                            description: "Icon as copied from Fontawesome. [Format: <i class=\"fa-regular fa-copyright\"</i>]",
                             type: "string",
                         }
                     ]

@@ -1,15 +1,35 @@
-button {
-    padding: 1em 2em;
-    font-size: var(--fs-500);
+/* ORDER */
+
+h1 {
+    margin-bottom: 1em;
 }
 
-div {
-    padding: 2em;
-    border: solid 2px black;
+.order {
+    background-color: var(--color-100);
 }
 
-video {
-    width: 320px;
-    height: 240px;
-    border: solid 5px yellow;
+a {
+    color: var(--color-900);
+}
+
+.download-button {
+    padding: 0.25em;
+    border: 1px solid var(--color-900);
+    box-shadow: var(--button-box-shadow-t);
+    transition: box-shadow var(--transition-time);
+}
+    .download-button:hover {
+        box-shadow: var(--button-box-shadow-d);
+    }
+
+
+.order__form {
+    margin-top: 4em;
+    display: flex;
+    justify-content: center;
+}
+
+iframe {
+    width: 80%;
+    min-height: 800px;
 }

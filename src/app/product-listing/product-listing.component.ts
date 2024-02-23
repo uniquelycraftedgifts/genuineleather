@@ -26,9 +26,6 @@ export class ProductListingComponent {
     this.mini = !this.mini;
   }
 
-
-  video_url = "https://www.youtube.com/embed/em22l6aKjRE?si=w_DhndHKjR9aM6T_";
-
   
   // getting data from parent:
   

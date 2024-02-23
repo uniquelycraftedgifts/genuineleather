@@ -1,1 +1,17 @@
-<h1 style="color: red;">WORK IN PROGESS</h1>
+<main>
+
+    <section class="order">
+        <div>
+            <h1>Order</h1>
+            <ng-container *ngIf="query_data">
+                <p>Download our <a class="download-button" [href]="form" target="_blank">Order Form</a> and email it to <a [href]="email_mailto(email)" target="_blank">{{email}}</a>.</p>
+            </ng-container>
+        </div>
+        <div class="order__form">
+            <ng-container *ngIf="form">
+                <iframe [src]="sanitize(form)" frameborder="0"></iframe>
+            </ng-container>
+        </div>
+    </section>
+
+</main>

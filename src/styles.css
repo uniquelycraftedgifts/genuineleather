@@ -46,6 +46,10 @@ html, body, * {
 }
 
 
+h1 {
+    font-size: var(--fs-800);
+}
+
 h3 {
     font-size: var(--fs-700);
 }

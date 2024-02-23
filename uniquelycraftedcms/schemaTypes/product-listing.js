@@ -31,13 +31,13 @@ export default {
                     title: "Description",
                     name: "description",
                     description: "Information about the product.",
-                    type: "string",
+                    type: "text",
                 },
                 {
                     title: "Optional",
                     name: "optional",
                     description: "Any optional accessories the product comes with.",
-                    type: "string",
+                    type: "text",
                 }
             ]
         },
@@ -45,7 +45,7 @@ export default {
             title: "Product Size",
             name: "product_size",
             description: "What is the products height, width and depth. EG: 15cm X 10cm X 5cm",
-            type: "string",
+            type: "text",
         },
         {
             title: "Product Prices",
@@ -180,12 +180,19 @@ export default {
                 {
                     type: "image",
                 }
-            ]
+            ],
+            validation: Rule => Rule.custom(images => {
+                if (images && images.length > 3) {
+                    return "You can upload a maximum of 3 images.";
+                }
+                return true;
+            })
         },
         {
             title: "Product Video",
             name: "product_video",
             type: "url",
+            description: "The embed url of your vide. Format:[https://www.youtube.com/embed/*] where * is your video ID form YouTube, EG: Bz2e-iAvVV4",
         },
     ],
 }

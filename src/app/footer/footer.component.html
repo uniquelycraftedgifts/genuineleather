@@ -1,6 +1,6 @@
-<footer *ngIf="contact_data">
+<footer>
 
-    <div class="bg-img" *ngIf="footer_image" [style.background-image]="makeUrl(footer_image)">
+    <div class="bg-img" [ngStyle]="{ 'background-image': footer_image ? makeUrl(footer_image) : 'none' }">
         <div class="transparent-rounded-div flex-row">
 
             <div class="footer__about container flex-col">
@@ -12,7 +12,7 @@
                 <div class="footer__links flex-col">
                     <h6>PRODUCTS</h6>
                     <ul class="footer__list">
-                        <li *ngFor="let category of categoryName" class="footer__item"> <a class="footer__link" routerLink="/products" [fragment]="category.category_name">{{category.category_name}}</a> </li>
+                        <li *ngFor="let category of categoryName" class="footer__item"> <a class="footer__link" routerLink="/products">{{category.category_name}}</a> </li>
                     </ul>
                 </div>
 
@@ -20,22 +20,32 @@
                     <h6>CONTACT</h6>
                     <div class="flex-row">
                         <i class="fa-solid fa-location-dot"></i>
-                        <p>{{contact_data.address}}</p>
+                        <ng-container *ngIf="contact_data">
+                            <p>{{contact_data.address}}</p>
+                        </ng-container>
                     </div>
                     <ul class="flex-row">
                         <i class="fa-solid fa-phone"></i>
-                        <li *ngFor="let number of contact_data.PHONE">{{number}}</li>
+                        <ng-container *ngIf="contact_data">
+                            <li *ngFor="let number of contact_data.PHONE">{{number}}</li>
+                        </ng-container>
                     </ul>
                     <ul class="flex-row">
                         <i class="fa-brands fa-whatsapp"></i>
-                        <li *ngFor="let number of contact_data.WHATSAPP"> <a class="footer__link" [href]="whatsapp_number(number)" target="_blank">{{number}}</a> </li>
+                        <ng-container *ngIf="contact_data">
+                            <li *ngFor="let number of contact_data.WHATSAPP"> <a class="footer__link" [href]="whatsapp_number(number)" target="_blank">{{number}}</a> </li>
+                        </ng-container>
                     </ul>
                     <ul class="flex-row">
                         <i class="fa-regular fa-envelope"></i>
-                        <li *ngFor="let email of contact_data.EMAIL"> <a class="footer__link" [href]="email_mailto(email)" target="_blank">{{email}}</a> </li>
+                        <ng-container *ngIf="contact_data">
+                            <li *ngFor="let email of contact_data.EMAIL"> <a class="footer__link" [href]="email_mailto(email)" target="_blank">{{email}}</a> </li>
+                        </ng-container>
                     </ul>
                     <div class="flex-col">
-                        <p *ngFor="let social of contact_data.SOCIAL_LINKS"><i [className]="strip_icon(social.icon)"></i> <a class="footer__link" [href]="social.link" target="_blank">{{social.handle}}</a></p>
+                        <ng-container *ngIf="contact_data">
+                            <p *ngFor="let social of contact_data.SOCIAL_LINKS"><i [className]="strip_icon(social.icon)"></i> <a class="footer__link" [href]="social.link" target="_blank">{{social.handle}}</a></p>
+                        </ng-container>
                     </div>
                 </div>
             </div>
@@ -47,9 +57,11 @@
         <div class="flex-col">
             <p><i class="fa-regular fa-copyright"></i>Copyright Uniquely Crafted {{copyright_year | date:'yyyy'}}</p>
             <div class="flex-row">
-                <p>Website Designed by {{contact_data.designed_by.designer_name}} 
-                    <a *ngFor="let contact of contact_data.designed_by.designer_contact" [href]="contact.link" target="_blank"> <i [className]="strip_icon(contact.icon)"></i> </a>
-                </p>
+                <ng-container *ngIf="contact_data">
+                    <p>Website Designed by {{contact_data.designed_by.designer_name}}
+                        <a *ngFor="let contact of contact_data.designed_by.designer_contact" [href]="contact.link" target="_blank"> <i [className]="strip_icon(contact.icon)"></i> </a>
+                    </p>
+                </ng-container>
             </div>
         </div>
         <div class="flex-col">

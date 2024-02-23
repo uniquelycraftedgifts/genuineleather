@@ -7,7 +7,7 @@ import { createClient } from '@sanity/client';
 })
 export class SanityService {
   private client = createClient({
-    projectId: 'enggryq3',
+    projectId: 'ox1vdxwn',
     dataset: 'production',
     apiVersion: '2022-03-07',
   })

@@ -1,7 +1,9 @@
 <div *ngIf="categoryData.PRODUCTS.length > 0" [id]="categoryData.category_name" class="products__category">
-    <div class="category-header">
-        <h2>{{categoryData.category_name}}</h2>
-    </div>
+    <ng-container *ngIf="categoryData">
+        <div class="category-header">
+            <h2 [id]="categoryData.category_slug">{{categoryData.category_name}}</h2>
+        </div>
+    </ng-container>
 
     <app-product-listing *ngFor="let listing of categoryData.PRODUCTS" [listingData]="listing"></app-product-listing>
 </div>
