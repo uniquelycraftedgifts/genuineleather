@@ -32,9 +32,6 @@
                     <ng-container *ngIf="listingData">
                         <p *ngIf="listingData.product_description.optional"><strong>Optional: </strong>{{listingData.product_description.optional}}</p>
                     </ng-container>
-                    <ng-container *ngIf="listingData">
-                        <p *ngIf="listingData.custom_material"><em>Material can be added in <strong>{{listingData.custom_material.customizable_component}}</strong> on client request.</em></p>
-                    </ng-container>
                 </div>
                 <div class="product__size">
                     <p *ngIf="listingData">{{listingData.product_size}}</p>
@@ -64,34 +61,37 @@
                         </div>
                     </ng-container>
                 </div>
-                <div class="product__patterns">
-                    <ng-container *ngIf="listingData">
-                        <div *ngFor="let pattern of listingData.PATTERNS" class="color-pattern-group">
-                            <div [style.background-image]="makeUrl(pattern.IMG)" class="product__patterns-img"></div>
-                            <p class="color-pattern-code"><em>{{pattern.pattern_code}}</em></p>
-                        </div>
-                    </ng-container>
-                </div>
+                <ng-container *ngIf="listingData">
+                    <div class="product__patterns">
+                        <ng-container *ngIf="listingData.material_patterns">
+                            <p> <em>{{listingData.material_patterns.material_component}}</em> </p>
+                            <div *ngFor="let material of listingData.material_patterns.MATERIALS" class="color-pattern-group">
+                                <div [style.background-image]="makeUrl(material.IMG)" class="product__patterns-img"></div>
+                                <p class="color-pattern-code"><em>{{material.material_code}}</em></p>
+                            </div>
+                        </ng-container>
+                    </div>
+                </ng-container>
             </div>
-            <div class="product__materials" *ngIf="listingData.DEVIATION">
-                <p> <em>{{listingData.DEVIATION.deviation}}</em> </p>
-                <div class="product__colors">
-                    <ng-container *ngIf="listingData">
+            <ng-container *ngIf="listingData">
+                <div class="product__materials" *ngIf="listingData.DEVIATION">
+                    <p> <em>{{listingData.DEVIATION.deviation}}</em> </p>
+                    <div class="product__colors">
                         <div *ngFor="let colour of listingData.DEVIATION.DEVIATIONcolours" class="color-pattern-group">
                             <i [style.background-color]="colour.colour_hex" [style.color]="colour.colour_hex" class="product__color fa-solid fa-circle-half-stroke"></i>
                             <p class="color-pattern-code"><em>{{colour.colour_code}}</em></p>
                         </div>
-                    </ng-container>
+                    </div>
+                    <div class="product__patterns">
+                        <ng-container *ngIf="listingData">
+                            <div *ngFor="let pattern of listingData.DEVIATION.DEVIATIONpatterns" class="color-pattern-group">
+                                <div [style.background-image]="makeUrl(pattern.DEVIATIONpatternImg)" class="product__patterns-img"></div>
+                                <p class="color-pattern-code"><em>{{pattern.pattern_code}}</em></p>
+                            </div>
+                        </ng-container>
+                    </div>
                 </div>
-                <div class="product__patterns">
-                    <ng-container *ngIf="listingData">
-                        <div *ngFor="let pattern of listingData.DEVIATION.DEVIATIONpatterns" class="color-pattern-group">
-                            <div [style.background-image]="makeUrl(pattern.DEVIATIONpatternImg)" class="product__patterns-img"></div>
-                            <p class="color-pattern-code"><em>{{pattern.pattern_code}}</em></p>
-                        </div>
-                    </ng-container>
-                </div>
-            </div>
+            </ng-container>
             
         </div>
 

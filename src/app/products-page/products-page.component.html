@@ -2,12 +2,14 @@
 
     <div class="category-nav">
         <div class="category-nav-aside">
-            <h1>Our Products</h1>
+            <h1 id="products">Our Products</h1>
             <i (click)="ToggleNav()" class="fa-solid fa-bars"></i>
         </div>
         <ul class="category__nav-list flex-row" [ngClass]="{ 'display-nav' : toggle }">
             <ng-container *ngIf="categories">
-                <li *ngFor="let category of categories" class="category__nav-item"><a routerLink="/products" [fragment]="category.category_name" class="category__nav-link">{{category.category_name}}</a></li>
+                <li *ngFor="let category of categories" class="category__nav-item">
+                    <a *ngIf="category.PRODUCTS.length > 0" routerLink="/products" [fragment]="category.category_name" class="category__nav-link">{{category.category_name}}</a>
+                </li>
             </ng-container>
         </ul>
     </div>

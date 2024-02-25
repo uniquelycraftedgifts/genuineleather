@@ -98,14 +98,27 @@ export default {
             ]
         },
         {
-            title: "Patterns",
-            name: "patterns",
-            description: "The material patterns this product comes in.",
-            type: "array",
-            of: [
+            title: "Material Patterns",
+            name: "material_patterns",
+            type: "document",
+            fields: [
                 {
-                    type: "reference",
-                    to: { type: "pattern" },
+                    title: "Material Component",
+                    name: "material_component",
+                    description: "Which component of the product the client can customize.",
+                    type: "string",
+                },
+                {
+                    title: "Material",
+                    name: "material",
+                    description: "The material patterns this product comes in.",
+                    type: "array",
+                    of: [
+                        {
+                            type: "reference",
+                            to: { type: "material_pattern" },
+                        }
+                    ]
                 }
             ]
         },
@@ -133,35 +146,15 @@ export default {
                     ]
                 },
                 {
-                    title: "Deviation Pattern",
-                    name: "deviation_pattern",
+                    title: "Deviation Material Pattern",
+                    name: "deviation_material_pattern",
                     type: "array",
                     of: [
                         {
                             type: "reference",
-                            to: { type: "pattern" },
+                            to: { type: "material_pattern" },
                         }
                     ]
-                }
-            ]
-        },
-        {
-            title: "Custom Material",
-            name: "custom_material",
-            description: "Can a client add material to a product. EG: material can be added in coin slot on client request.",
-            type: "document",
-            fields: [
-                {
-                    title: "Customizable",
-                    name: "customizable",
-                    description: "Can the client add a materail?",
-                    type: "boolean",
-                },
-                {
-                    title: "Customizable Component",
-                    name: "customizable_component",
-                    description: "Which component of the product the client can customize.",
-                    type: "string",
                 }
             ]
         },
@@ -191,8 +184,8 @@ export default {
         {
             title: "Product Video",
             name: "product_video",
-            type: "url",
-            description: "The embed url of your vide. Format:[https://www.youtube.com/embed/*] where * is your video ID form YouTube, EG: Bz2e-iAvVV4",
+            type: "string",
+            description: "Your video's ID form YouTube, EG: Bz2e-iAvVV4 (refer to guide doc for where to get this ID)",
         },
     ],
 }

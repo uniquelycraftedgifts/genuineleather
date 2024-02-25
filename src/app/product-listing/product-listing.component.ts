@@ -31,8 +31,7 @@ export class ProductListingComponent {
   
   @Input() listingData : any;
 
-
-
+  
   makeUrl(link:string) {
     return "url(" + link + ")";
   }

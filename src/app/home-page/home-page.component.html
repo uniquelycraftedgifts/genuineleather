@@ -27,7 +27,7 @@
       <ng-container *ngIf="category_data">
           <div *ngFor="let cat of category_data" class="category">
               <div class="category__img">
-                  <a routerLink="/products" [fragment]="cat.category_slug"> <img [src]="cat.category_image" alt=""> </a>
+                  <a routerLink="/products" fragment="products"> <img [src]="cat.category_image" alt=""> </a>
               </div>
               <p>{{cat.category_name}}</p>
           </div>

@@ -289,3 +289,21 @@ section {
 
 }
 
+
+/* 400 PX */
+
+@media (max-width: 400px) {
+
+    :root {
+        font-size: 12px;
+    }
+    
+    .two-col-grid {
+        grid-template-columns: repeat(1, auto);
+    }
+    
+    .three-col-grid {
+        grid-template-columns: repeat(1, auto);
+    }
+
+}
